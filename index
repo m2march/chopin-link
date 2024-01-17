@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect Example</title>
+</head>
+<body>
+
+    <form id="redirectForm" onsubmit="redirectToText(); return false;">
+        <label for="textInput">Enter Text:</label>
+        <input type="text" id="textInput" required>
+        <button type="submit">Redirect</button>
+    </form>
+
+    <script>
+        function redirectToText() {
+            // Get the text from the input field
+            var inputText = document.getElementById('textInput').value;
+            var base_link = "https://surveys.mcmaster.ca/limesurvey/index.php/951198?lang=en&id="
+
+            // Redirect to a new page with the text in the URL
+            window.location.href = base_link + encodeURIComponent(inputText);
+        }
+    </script>
+
+</body>
+</html>
